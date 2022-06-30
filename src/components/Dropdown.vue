@@ -1,9 +1,6 @@
 <template>
     <div class="custom-dropdown">
         <div ref="toggle" @click="toggleDropdown">
-            <!-- <va-icon name="public" /> -->
-            <!-- <va-icon v-if="value === ''" name="public" />
-            <span v-else>{{ value }}</span> -->
             <slot name="label"></slot>
         </div>
 
@@ -63,8 +60,11 @@ export default {
     position: relative;
     height: 100%;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-dropdown-content {
@@ -78,9 +78,10 @@ export default {
     flex-direction: column;
     align-items: center;
     z-index: 1000;
-    max-height: 50vh;
+    /* max-height: 350px; */
     overflow: auto;
     border-radius: 0.5rem;
+    width: max-content;
 }
 
 .custom-dropdown-content.right-most {

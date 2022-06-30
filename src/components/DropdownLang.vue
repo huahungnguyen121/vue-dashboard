@@ -8,7 +8,6 @@ import VieFlagVue from "./flags/VieFlag.vue";
     <DropdownVue>
         <template #label>
             <div class="flag-icon">
-                <!-- <USFlagVue /> -->
                 <component
                     :is="items.find((item) => item.value === value).icon"
                 ></component>
@@ -20,11 +19,11 @@ import VieFlagVue from "./flags/VieFlag.vue";
             :key="index"
             @click="changeLang(option.value)"
         >
-            <div class="flag-icon">
+            <div class="flag-icon item">
                 <component :is="option.icon"></component>
             </div>
             <div class="custom-dropdown-item-label">
-                {{ option.title }}
+                {{ $t(`languages.${option.value}`) }}
             </div>
         </div>
     </DropdownVue>
@@ -34,7 +33,6 @@ import VieFlagVue from "./flags/VieFlag.vue";
 export default {
     data() {
         return {
-            isOpen: false,
             value: this.$i18next.language,
             items: [
                 {
@@ -55,76 +53,18 @@ export default {
         VieFlagVue,
     },
     methods: {
-        toggleDropdown(e) {
-            e.stopPropagation();
-
-            this.isOpen = !this.isOpen;
-        },
-        closeDropdown() {
-            if (this.isOpen) this.isOpen = false;
-        },
         changeLang(value) {
             this.$i18next.changeLanguage(value);
             this.value = value;
         },
     },
-    mounted() {
-        this.outsideClick = window.addEventListener(
-            "click",
-            this.closeDropdown
-        );
-    },
-    beforeUnmount() {
-        window.removeEventListener("click", this.closeDropdown);
-    },
-    updated() {
-        if (this.isOpen) {
-            // check if dropdown is going off screen
-            if (
-                window.innerWidth -
-                    this.$refs.content.getBoundingClientRect().right <
-                0
-            )
-                this.$refs.content.classList.add("right-most");
-        }
-    },
 };
 </script>
 
-<style>
-.custom-dropdown {
-    position: relative;
-    height: 100%;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-}
-
-.custom-dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--background-color);
-    box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1000;
-    max-height: 50vh;
-    overflow: auto;
-    border-radius: 0.5rem;
-}
-
-.custom-dropdown-content.right-most {
-    right: 0;
-    left: auto;
-    transform: translateX(0);
-}
-
+<style scoped>
 .custom-dropdown-item {
     padding: 1rem 1.5rem;
-    color: inherit;
+    color: black;
     cursor: pointer;
     width: 100%;
     display: flex;
@@ -132,13 +72,16 @@ export default {
 }
 
 .custom-dropdown-item:hover {
-    color: blue;
+    color: var(--va-primary);
 }
 
 .flag-icon {
     min-width: 1.5rem;
-    margin-right: 0.5rem;
     display: flex;
     align-items: center;
+}
+
+.flag-icon.item {
+    margin-right: 0.5rem;
 }
 </style>

@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { createVuestic } from "vuestic-ui";
-import Themes from "./assets/themes.js";
+import { THEMES } from "./themes/themes.js";
 import "vuestic-ui/dist/vuestic-ui.css";
 import i18n from "./utils/i18n";
 
@@ -13,7 +13,8 @@ app.use(router);
 app.use(
     createVuestic({
         config: {
-            colors: Themes.LIGHT,
+            colors: THEMES[0].colors,
+            components: THEMES[0].components,
         },
     })
 );

@@ -6,17 +6,32 @@ import Sidebar from "./components/Sidebar.vue";
 
 <template>
     <!-- Dashboard header -->
-    <DashboardHeader />
+    <DashboardHeader @minimized="toggleSidebar" />
 
     <!-- Page content -->
     <div class="main-body">
-        <Sidebar />
+        <Sidebar :minimized="minimized" />
 
-        <main class="content">
+        <div class="content">
             <RouterView />
-        </main>
+        </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            minimized: false,
+        };
+    },
+    methods: {
+        toggleSidebar(state) {
+            this.minimized = state;
+        },
+    },
+};
+</script>
 
 <style>
 @import "@/assets/base.css";
@@ -24,6 +39,11 @@ import Sidebar from "./components/Sidebar.vue";
 #app {
     font-weight: normal;
     color: #2c3e50;
+}
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
 }
 
 .main-body {
@@ -34,7 +54,11 @@ import Sidebar from "./components/Sidebar.vue";
 .content {
     flex-grow: 1;
     overflow-y: auto;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     background-color: var(--background-color);
+}
+
+.row-equal .flex .va-card {
+    height: 100%;
 }
 </style>

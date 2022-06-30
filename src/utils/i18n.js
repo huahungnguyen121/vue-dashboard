@@ -1,21 +1,19 @@
 import i18next from "i18next";
 import i18nVue from "i18next-vue";
+import en from "../translations/en.json";
+import vi from "../translations/vi.json";
+
+function formatJSON(json) {
+    return { translation: json };
+}
+
+formatJSON(en);
 
 i18next.init({
     fallbackLng: "en",
     resources: {
-        vi: {
-            translation: {
-                message: "Xin chào!",
-                content: "Xin chào mọi người!",
-            },
-        },
-        en: {
-            translation: {
-                message: "Hello!",
-                content: "Hello everyone!",
-            },
-        },
+        vi: formatJSON(vi),
+        en: formatJSON(en),
     },
 });
 

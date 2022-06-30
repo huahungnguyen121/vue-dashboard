@@ -1,63 +1,27 @@
 <template>
-    <va-sidebar
-        class="sidebar"
-        :minimized="minimized"
-        textColor="dark"
-        minimizedWidth="64px"
-    >
+    <va-sidebar class="sidebar" :minimized="minimized" minimizedWidth="auto">
         <div class="sidebar-menu">
-            <template v-for="item of items" :key="item.to">
-                <va-collapse
-                    class="sidebar-item"
-                    v-model="item.collapse"
-                    :icon="item.icon"
-                >
-                    <template #header>
-                        <va-sidebar-item :active="item.active">
-                            <va-sidebar-item-content>
-                                <div class="sidebar-item-icon">
-                                    <va-icon :name="item.icon" />
-                                </div>
-                                <va-sidebar-item-title
-                                    v-if="!minimized"
-                                    style="height: 24px"
-                                >
-                                    {{ item.title }}
-                                </va-sidebar-item-title>
-                                <va-icon
-                                    v-if="item.sub && !item.collapse"
-                                    name="expand_more"
-                                />
-                                <va-icon
-                                    v-else-if="item.sub && item.collapse"
-                                    name="expand_less"
-                                />
-                            </va-sidebar-item-content>
-                        </va-sidebar-item>
-                    </template>
-                    <template v-if="item.sub" #default>
-                        <va-sidebar-item
-                            v-for="sub of item.sub"
-                            :active="sub.active"
-                        >
-                            <va-sidebar-item-content>
-                                <div class="sidebar-item-icon"></div>
-                                <va-sidebar-item-title style="height: 24px">
-                                    {{ sub.title }}
-                                </va-sidebar-item-title>
-                            </va-sidebar-item-content>
-                        </va-sidebar-item>
-                    </template>
-                </va-collapse>
-            </template>
+            <CompactMenuVue v-if="minimized" :items="items" />
+            <FullSizeMenuVue v-else :items="items" />
         </div>
     </va-sidebar>
 </template>
 
 <script>
 import { useColors } from "vuestic-ui";
+import FullSizeMenuVue from "./FullSizeMenu.vue";
+import CompactMenuVue from "./CompactMenu.vue";
 
 export default {
+    props: {
+        minimized: {
+            type: Boolean,
+        },
+    },
+    components: {
+        CompactMenuVue,
+        FullSizeMenuVue,
+    },
     setup() {
         const { getColor } = useColors();
         const primaryColor = getColor("primary");
@@ -68,171 +32,170 @@ export default {
     data() {
         return {
             value: false,
-            minimized: false,
             items: [
-                { title: "Dashboard", icon: "dashboard", active: false },
+                { title: "dashboard", icon: "dashboard", active: false },
                 {
-                    title: "Statistics",
+                    title: "statistics",
                     icon: "signal_cellular_alt",
                     sub: [
                         {
-                            title: "Charts",
+                            title: "charts",
                             active: false,
                         },
                         {
-                            title: "Progress Bars",
+                            title: "progressBars",
                             active: false,
                         },
                     ],
                     collapse: false,
                 },
                 {
-                    title: "Forms",
+                    title: "forms",
                     icon: "description",
                     sub: [
                         {
-                            title: "Form Elements",
+                            title: "formElements",
                             active: false,
                         },
                         {
-                            title: "Medium Editor",
+                            title: "mediumEditor",
                             active: false,
                         },
                     ],
                     collapse: false,
                 },
                 {
-                    title: "UI Elements",
+                    title: "uiElements",
                     icon: "widgets",
                     sub: [
                         {
-                            title: "Button",
+                            title: "buttons",
                             active: false,
                         },
                         {
-                            title: "Cards",
+                            title: "cards",
                             active: false,
                         },
                         {
-                            title: "Chat",
+                            title: "chat",
                             active: false,
                         },
                         {
-                            title: "Chips",
+                            title: "chips",
                             active: false,
                         },
                         {
-                            title: "Collapses",
+                            title: "collapses",
                             active: false,
                         },
                         {
-                            title: "Colors",
+                            title: "colors",
                             active: false,
                         },
                         {
-                            title: "File Upload",
+                            title: "fileUpload",
                             active: false,
                         },
                         {
-                            title: "Grid",
+                            title: "grid",
                             active: false,
                         },
                         {
-                            title: "Icons",
+                            title: "icons",
                             active: false,
                         },
                         {
-                            title: "Lists",
+                            title: "lists",
                             active: false,
                         },
                         {
-                            title: "Modals",
+                            title: "modals",
                             active: false,
                         },
                         {
-                            title: "Notifications",
+                            title: "notifications",
                             active: false,
                         },
                         {
-                            title: "Popovers",
+                            title: "popovers",
                             active: false,
                         },
                         {
-                            title: "Rating",
+                            title: "rating",
                             active: false,
                         },
                         {
-                            title: "Sliders",
+                            title: "sliders",
                             active: false,
                         },
                         {
-                            title: "Spacing",
+                            title: "spacing",
                             active: false,
                         },
                         {
-                            title: "Spinners",
+                            title: "spinners",
                             active: false,
                         },
                         {
-                            title: "Tabs",
+                            title: "tabs",
                             active: false,
                         },
                         {
-                            title: "Timelines",
+                            title: "timelines",
                             active: false,
                         },
                         {
-                            title: "Tree view",
+                            title: "treeView",
                             active: false,
                         },
                         {
-                            title: "Typography",
+                            title: "typography",
                             active: false,
                         },
                     ],
                     collapse: false,
                 },
                 {
-                    title: "Maps",
+                    title: "maps",
                     icon: "near_me",
                     sub: [
                         {
-                            title: "Google Maps",
+                            title: "google-maps",
                             active: false,
                         },
                         {
-                            title: "Yandex Maps",
+                            title: "yandex-maps",
                             active: false,
                         },
                         {
-                            title: "Leaflet Maps",
+                            title: "leaflet-maps",
                             active: false,
                         },
                         {
-                            title: "Bubble Maps",
+                            title: "bubble-maps",
                             active: false,
                         },
                         {
-                            title: "Line Maps",
+                            title: "line-maps",
                             active: false,
                         },
                     ],
                     collapse: false,
                 },
                 {
-                    title: "Pages",
+                    title: "pages",
                     icon: "article",
                     sub: [
                         {
-                            title: "Login/Signup",
+                            title: "login-signup",
                             active: false,
                         },
                         {
-                            title: "404 Pages",
+                            title: "404-pages",
                             active: false,
                         },
                         {
-                            title: "Faq",
+                            title: "faq",
                             active: false,
                         },
                     ],
@@ -250,23 +213,11 @@ export default {
     height: 100%;
     overflow-y: auto;
     overflow-anchor: none;
-    background-color: white !important;
+    flex-shrink: 0;
 }
 
 .sidebar-menu {
     padding: 2rem 0;
-}
-
-.sidebar-item-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.sidebar-item {
-    cursor: pointer;
 }
 
 /* override UI lib */
@@ -280,6 +231,10 @@ export default {
 .va-sidebar-item-title {
     display: flex;
     align-items: center;
+}
+
+.va-collapse__body {
+    margin-top: 0 !important;
 }
 
 /* .va-collapse__header__content:hover {
