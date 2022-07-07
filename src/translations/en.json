@@ -394,7 +394,7 @@
         "modalText": "File type is incorrect!"
       },
       "chips": {
-        "chips": { 
+        "chips": {
         "title": "Chips",
         "primary": "Primary chip",
         "secondary": "Secondary chip",
@@ -405,7 +405,7 @@
         "gray": "Gray chip",
         "dark": "Dark chip"
         },
-        "badges": { 
+        "badges": {
         "title": "Badges",
         "primary": "Primary badge",
         "secondary": "Secondary badge",
@@ -508,7 +508,8 @@
       },
       "chat": {
         "title": "Chat",
-        "sendButton": "Send"
+        "sendButton": "Send",
+        "inputPlaceholder": "Type your message..."
       },
       "spacingPlayground": {
         "value": "Value",
@@ -568,7 +569,7 @@
             "text": "Lighten 15% applied to an original style (gradient or flat color) for hover state."
           },
           "pressed": {
-            "title": "Hovered Button Gradients",
+            "title": "Pressed Button Gradients",
             "text": "Darken 15% applied to an original style (gradient or flat color) for pressed state."
           }
         }

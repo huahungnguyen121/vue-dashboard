@@ -174,7 +174,7 @@ export const THEMES = [
                 textColor: "primary",
             },
             VaCard: {
-                color: "widget",
+                color: "white",
             },
             VaCardContent: {
                 textColor: "dark",

@@ -14,7 +14,7 @@
             />
             <div class="color-list">
                 <div class="custom-dropdown-item" v-for="name in colorNames">
-                    <va-color-indicator :color="colors[name]" />
+                    <va-color-indicator :color="name" />
                     <span>{{ name }}</span>
                 </div>
             </div>
@@ -37,7 +37,6 @@ export default {
         );
 
         return {
-            colors,
             colorNames,
             mergeGlobalConfig,
         };
@@ -68,6 +67,7 @@ export default {
         value(value) {
             try {
                 const toTheme = getTheme(value);
+                console.log(toTheme);
                 this.mergeGlobalConfig({
                     colors: toTheme.colors,
                     components: toTheme.components,

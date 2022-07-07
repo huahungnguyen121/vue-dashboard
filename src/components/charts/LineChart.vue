@@ -9,6 +9,7 @@
 import { Line } from "vue-chartjs";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { THEMES } from "../../themes/themes";
+import chartConfig from "./chartConfig";
 
 ChartJS.register(...registerables);
 
@@ -42,18 +43,7 @@ export default {
                     },
                 ],
             },
-            chartOptions: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: "bottom",
-                        labels: {
-                            usePointStyle: true,
-                        },
-                    },
-                },
-            },
+            chartOptions: { ...chartConfig },
         };
     },
 };

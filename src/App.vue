@@ -54,7 +54,6 @@ export default {
 .content {
     flex-grow: 1;
     overflow-y: auto;
-    /* padding: 1.5rem; */
     background-color: var(--background-color);
 }
 

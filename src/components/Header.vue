@@ -43,9 +43,7 @@
 
 <script>
 import { RouterLink } from "vue-router";
-import DashboardLogoLight from "@/components/icons/DashboardLogoLight.vue";
 import DropdownLang from "./DropdownLang.vue";
-import MenuExpandLight from "./icons/MenuExpandLight.vue";
 import DashboardLogo from "./icons/DashboardLogo.vue";
 import MenuCollapse from "./icons/MenuCollapse.vue";
 import { useColors } from "vuestic-ui";
@@ -67,9 +65,7 @@ export default {
         };
     },
     components: {
-        DashboardLogoLight,
         DropdownLang,
-        MenuExpandLight,
         DashboardLogo,
         MenuCollapse,
         DropdownColor,

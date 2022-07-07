@@ -2,7 +2,13 @@
     <template v-for="item in items" :key="item">
         <va-dropdown class="hoverable" placement="right">
             <template #anchor>
-                <va-sidebar-item>
+                <va-sidebar-item
+                    :active="
+                        isRouteActive(item) ||
+                        (item.sub && item.sub.some((sub) => isRouteActive(sub)))
+                    "
+                    :to="item.name"
+                >
                     <va-sidebar-item-content>
                         <div>
                             <va-icon :name="item.icon" />
@@ -16,7 +22,12 @@
                 </va-sidebar-item>
             </template>
             <div v-if="item.sub" class="compact-menu-dropdown hoverable">
-                <va-sidebar-item v-for="sub in item.sub" :key="sub">
+                <va-sidebar-item
+                    v-for="sub in item.sub"
+                    :active="isRouteActive(sub)"
+                    :to="sub.name"
+                    :key="sub"
+                >
                     <va-sidebar-item-content>
                         <va-sidebar-item-title>
                             {{ $t(`menu.${sub.title}`) }}
@@ -31,7 +42,15 @@
 <script>
 export default {
     props: {
-        items: Array,
+        items: {
+            type: Array,
+            default: [],
+        },
+    },
+    methods: {
+        isRouteActive(item) {
+            return item.title === this.$route.name; // must match route name in router
+        },
     },
 };
 </script>

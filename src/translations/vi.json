@@ -45,32 +45,32 @@
         "advanced": "Advanced"
       },
       "buttons": {
-        "advanced": "Buttons With Icons",
-        "size": "Button Sizes",
-        "tags": "Button Tags",
-        "button": "Button",
-        "buttonGroups": "Button Groups",
-        "buttonsDropdown": "Buttons with dropdown",
+        "advanced": "Nút bấm với biểu tượng",
+        "size": "Kích cỡ nút bấm",
+        "tags": "Gắn thẻ cho nút bấm",
+        "button": "Nút bấm",
+        "buttonGroups": "Nhóm nút bấm",
+        "buttonsDropdown": "Nút bấm với dropdown",
         "split": "Split",
         "splitTo": "Split to",
-        "customIcon": "Custom icon",
-        "content": "Content",
-        "buttonToggles": "Button Toggles",
-        "pagination": "Pagination",
-        "a-link": "Open EpicSpinners",
-        "router-link": "Move to Charts",
-        "colors": "Button Colors",
+        "customIcon": "Biểu tượng tùy chỉnh ",
+        "content": "Nội dung",
+        "buttonToggles": "Nút bấm bật/tắt",
+        "pagination": "Phân trang",
+        "a-link": "Mở EpicSpinners",
+        "router-link": "Chuyển đến biểu đồ",
+        "colors": "Màu nút bấm",
         "disabled": "Disabled",
         "dropdown": "DROPDOWN",
         "hover": "HOVER",
-        "types": "Button Types",
+        "types": "Kiểu nút bấm",
         "pressed": "PRESSED",
-        "default": "Default",
-        "outline": "Outline",
-        "flat": "Flat",
-        "large": "Large",
-        "small": "Small",
-        "normal": "Normal",
+        "default": "Mặc định",
+        "outline": "Viền",
+        "flat": "Phẳng",
+        "large": "Lớn",
+        "small": "Nhỏ",
+        "normal": "Bình thường",
         "success": "Success",
         "info": "Info",
         "danger": "Danger",
@@ -124,8 +124,8 @@
       },
       "dashboard": {
         "versions": "Versions",
-        "setupRemoteConnections": "Setup Remote Connections",
-        "currentVisitors": "Current Visitors",
+        "setupRemoteConnections": "Thiết lập kết nối từ xa",
+        "currentVisitors": "Khách du lịch hiện tại",
         "charts": {
           "trendyTrends": "Xu hướng",
           "showInMoreDetail": "Xem chi tiết",
@@ -136,15 +136,15 @@
         },
         "info": {
           "componentRichTheme": "component-rich theme",
-          "completedPullRequests": "completed pull requests",
-          "users": "users",
-          "points": "points",
-          "units": "units",
-          "exploreGallery": "Explore gallery",
-          "viewLibrary": "View Library",
+          "completedPullRequests": "pull request đã hoàn thành",
+          "users": "người dùng",
+          "points": "điểm",
+          "units": "đơn vị",
+          "exploreGallery": "Bộ sưu tập",
+          "viewLibrary": "Xem thư viện",
           "commits": "commits",
           "components": "components",
-          "teamMembers": "team members"
+          "teamMembers": "thành viên nhóm"
         },
         "table": {
           "title": "Awesome table",
@@ -155,35 +155,35 @@
         },
         "tabs": {
           "overview": {
-            "title": "Overview",
-            "built": "Built with Vue.js framework",
-            "free": "Absolutely free for everyone",
-            "fresh": "Fresh and crisp design",
-            "mobile": "Responsive and optimized for mobile",
-            "components": "Tons of useful components",
-            "nojQuery": "Completely jQuery free"
+            "title": "Tổng quan",
+            "built": "Dựa trên Vue.js framework",
+            "free": "Miễn phí cho mọi người",
+            "fresh": "Thiết kế bắt mắt",
+            "mobile": "Responsive và tối ưu với thiết bị di động",
+            "components": "Nhiều component hữu ích",
+            "nojQuery": "Không phụ thuộc jQuery"
           },
           "billingAddress": {
-            "title": "Billing Address",
-            "personalInfo": "Personal Info",
-            "firstName": "First name & Last Name",
+            "title": "Địa chỉ thanh toán",
+            "personalInfo": "Thông tin cá nhân",
+            "firstName": "Họ và tên",
             "email": "Email",
-            "address": "Address",
-            "companyInfo": "Company Info",
-            "city": "City",
-            "country": "Country",
-            "infiniteConnections": "Infinite connections",
-            "addConnection": "Add Connection"
+            "address": "Địa chỉ",
+            "companyInfo": "Thông tin cơ quan",
+            "city": "Thành phố",
+            "country": "Quốc gia",
+            "infiniteConnections": "Không giới hạn kết nối",
+            "addConnection": "Tạo kết nối"
           },
           "bankDetails": {
-            "title": "Bank Details",
-            "detailsFields": "Details Fields",
-            "bankName": "Bank Name",
-            "accountName": "Account Name",
+            "title": "Thông tin ngân hàng",
+            "detailsFields": "Thông tin chi tiết",
+            "bankName": "Tên ngân hàng",
+            "accountName": "Tên tài khoản",
             "sortCode": "Sort Code",
-            "accountNumber": "Account Number",
-            "notes": "Notes",
-            "sendDetails": "Send Details"
+            "accountNumber": "Số tài khoản",
+            "notes": "Ghi chú",
+            "sendDetails": "Gửi chi tiết"
           }
         },
         "navigationLayout": "navigation layout",
@@ -248,28 +248,28 @@
           "customDateFormat": "Custom date format"
         },
         "inputs": {
-          "emailValidatedSuccess": "Email (validated with success)",
-          "emailValidated": "Email (validated)",
-          "inputWithIcon": "Input With Icon",
-          "inputWithButton": "Input With Button",
+          "emailValidatedSuccess": "Email (kiểm tra thành công)",
+          "emailValidated": "Email (đã kiểm tra)",
+          "inputWithIcon": "Input Với Biểu Tượng",
+          "inputWithButton": "Input Với Nút Bấm",
           "inputWithClearButton": "Input With Clear Button",
           "inputWithRoundButton": "Input With Round Button",
-          "textInput": "Text Input",
-          "textInputWithDescription": "Text Input (with description)",
+          "textInput": "Input Chữ",
+          "textInputWithDescription": "Input Chữ (có mô tả)",
           "textArea": "Text Area",
           "title": "Inputs",
-          "upload": "UPLOAD"
+          "upload": "TẢI LÊN"
         },
         "mediumEditor": {
           "title": "Medium Editor"
         },
         "selects": {
-          "country": "Country Select",
-          "countryMulti": "Country Multi Select",
-          "multi": "Multi Select",
-          "simple": "Simple Select",
-          "searchable": "Select with search",
-          "searchableMulti": "Multi Select with search",
+          "country": "Chọn Quốc Gia",
+          "countryMulti": "Chọn Nhiều Quốc Gia",
+          "multi": "Chọn Nhiều",
+          "simple": "Chọn Đơn giản",
+          "searchable": "Chọn Có Tìm Kiếm",
+          "searchableMulti": "Chọn Nhiều Có Tìm Kiếm",
           "title": "Selects"
         }
       },
@@ -486,11 +486,11 @@
         "loading": "Loading",
         "headings": {
           "email": "Email",
-          "name": "Name",
-          "firstName": "First Name",
-          "lastName": "Last Name",
-          "status": "Status",
-          "country": "Country",
+          "name": "Tên đầy đủ",
+          "firstName": "Tên",
+          "lastName": "Họ",
+          "status": "Trạng thái",
+          "country": "Quốc tịch",
           "location": "Location"
         }
       },
@@ -507,8 +507,9 @@
         "advanced": "Advanced"
       },
       "chat": {
-        "title": "Chat",
-        "sendButton": "Send"
+        "title": "Trò chuyện",
+        "sendButton": "Gửi",
+        "inputPlaceholder": "Nhập nội dung..."
       },
       "spacingPlayground": {
         "value": "Value",
@@ -568,7 +569,7 @@
             "text": "Lighten 15% applied to an original style (gradient or flat color) for hover state."
           },
           "pressed": {
-            "title": "Hovered Button Gradients",
+            "title": "Pressed Button Gradients",
             "text": "Darken 15% applied to an original style (gradient or flat color) for pressed state."
           }
         }

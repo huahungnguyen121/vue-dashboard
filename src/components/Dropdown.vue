@@ -1,6 +1,6 @@
 <template>
-    <div class="custom-dropdown">
-        <div ref="toggle" @click="toggleDropdown">
+    <div class="custom-dropdown" @click="toggleDropdown">
+        <div ref="toggle">
             <slot name="label"></slot>
         </div>
 

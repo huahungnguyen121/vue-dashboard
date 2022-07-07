@@ -6,7 +6,7 @@
             :icon="item.icon"
         >
             <template #header>
-                <va-sidebar-item :active="item.active">
+                <va-sidebar-item :active="isRouteActive(item)" :to="item.name">
                     <va-sidebar-item-content>
                         <div class="sidebar-item-icon">
                             <va-icon :name="item.icon" />
@@ -28,8 +28,9 @@
             <template v-if="item.sub" #default>
                 <va-sidebar-item
                     v-for="sub of item.sub"
-                    :active="sub.active"
+                    :active="isRouteActive(sub)"
                     :key="sub"
+                    :to="sub.name"
                 >
                     <va-sidebar-item-content>
                         <div class="sidebar-item-icon"></div>
@@ -46,12 +47,20 @@
 <script>
 export default {
     props: {
-        items: Array,
+        items: {
+            type: Array,
+            default: [],
+        },
+    },
+    methods: {
+        isRouteActive(item) {
+            return item.title === this.$route.name; // must match route name in router
+        },
     },
 };
 </script>
 
-<style>
+<style scoped>
 .sidebar-item-icon {
     display: flex;
     justify-content: center;
@@ -62,5 +71,22 @@ export default {
 
 .sidebar-item {
     cursor: pointer;
+}
+
+/* override UI lib */
+.va-collapse__header__content {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.va-sidebar-item-title {
+    display: flex;
+    align-items: center;
+}
+
+.va-collapse__body {
+    margin-top: 0 !important;
 }
 </style>

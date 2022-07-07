@@ -8,12 +8,15 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "amcharts3": "^3.21.15",
+    "ammap3": "^3.21.15",
     "i18next": "^21.8.10",
     "i18next-vue": "^2.0.0-beta.0",
+    "medium-editor": "^5.23.3",
     "vue": "^3.2.36",
     "vue-chartjs": "^4.1.1",
     "vue-router": "^4.0.15",
-    "vuestic-ui": "^1.4.1"
+    "vuestic-ui": "^1.4.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
