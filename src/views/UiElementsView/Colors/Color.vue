@@ -94,7 +94,6 @@ export default {
             this.$vaToast.init({
                 message: msg,
                 position: "bottom-right",
-                closeable: false,
                 duration: 2000,
                 color: toastColor,
             });

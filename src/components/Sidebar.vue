@@ -35,7 +35,7 @@ export default {
             items: [
                 {
                     title: "dashboard",
-                    name: "/",
+                    path: "/",
                     icon: "dashboard",
                     active: true,
                 },
@@ -45,12 +45,12 @@ export default {
                     sub: [
                         {
                             title: "charts",
-                            name: "/statistics/charts",
+                            path: "/statistics/charts",
                             active: false,
                         },
                         {
                             title: "progressBars",
-                            name: "/statistics/progress-bars",
+                            path: "/statistics/progress-bars",
                             active: false,
                         },
                     ],
@@ -62,12 +62,12 @@ export default {
                     sub: [
                         {
                             title: "formElements",
-                            name: "/forms/form-elements",
+                            path: "/forms/form-elements",
                             active: false,
                         },
                         {
                             title: "mediumEditor",
-                            name: "/forms/medium-editor",
+                            path: "/forms/medium-editor",
                             active: false,
                         },
                     ],
@@ -79,7 +79,7 @@ export default {
                     sub: [
                         {
                             title: "markupTables",
-                            name: "/tables/markup-tables",
+                            path: "/tables/markup-tables",
                             active: false,
                         },
                     ],
@@ -91,107 +91,107 @@ export default {
                     sub: [
                         {
                             title: "buttons",
-                            name: "/ui-elements/buttons",
+                            path: "/ui-elements/buttons",
                             active: false,
                         },
                         {
                             title: "cards",
-                            name: "/ui-elements/cards",
+                            path: "/ui-elements/cards",
                             active: false,
                         },
                         {
                             title: "chat",
-                            name: "/ui-elements/chat",
+                            path: "/ui-elements/chat",
                             active: false,
                         },
                         {
                             title: "chips",
-                            name: "/ui-elements/chips",
+                            path: "/ui-elements/chips",
                             active: false,
                         },
                         {
                             title: "collapses",
-                            name: "/ui-elements/collapses",
+                            path: "/ui-elements/collapses",
                             active: false,
                         },
                         {
                             title: "colors",
-                            name: "/ui-elements/colors",
+                            path: "/ui-elements/colors",
                             active: false,
                         },
                         {
                             title: "fileUpload",
-                            name: "/ui-elements/file-upload",
+                            path: "/ui-elements/file-upload",
                             active: false,
                         },
                         {
                             title: "grid",
-                            name: "/ui-elements/grid",
+                            path: "/ui-elements/grid",
                             active: false,
                         },
                         {
                             title: "icons",
-                            name: "/ui-elements/icons",
+                            path: "/ui-elements/icons",
                             active: false,
                         },
                         {
                             title: "lists",
-                            name: "/ui-elements/lists",
+                            path: "/ui-elements/lists",
                             active: false,
                         },
                         {
                             title: "modals",
-                            name: "/ui-elements/modals",
+                            path: "/ui-elements/modals",
                             active: false,
                         },
                         {
                             title: "notifications",
-                            name: "/ui-elements/notifications",
+                            path: "/ui-elements/notifications",
                             active: false,
                         },
                         {
                             title: "popovers",
-                            name: "/ui-elements/popovers",
+                            path: "/ui-elements/popovers",
                             active: false,
                         },
                         {
                             title: "rating",
-                            name: "/ui-elements/rating",
+                            path: "/ui-elements/rating",
                             active: false,
                         },
                         {
                             title: "sliders",
-                            name: "/ui-elements/sliders",
+                            path: "/ui-elements/sliders",
                             active: false,
                         },
                         {
                             title: "spacing",
-                            name: "/ui-elements/spacing",
+                            path: "/ui-elements/spacing",
                             active: false,
                         },
                         {
                             title: "spinners",
-                            name: "/ui-elements/spinnners",
+                            path: "/ui-elements/spinners",
                             active: false,
                         },
                         {
                             title: "tabs",
-                            name: "/ui-elements/tabs",
+                            path: "/ui-elements/tabs",
                             active: false,
                         },
                         {
                             title: "timelines",
-                            name: "/ui-elements/timelines",
+                            path: "/ui-elements/timelines",
                             active: false,
                         },
                         {
                             title: "treeView",
-                            name: "/ui-elements/tree-view",
+                            path: "/ui-elements/tree-view",
                             active: false,
                         },
                         {
                             title: "typography",
-                            name: "/ui-elements/typography",
+                            path: "/ui-elements/typography",
                             active: false,
                         },
                     ],
@@ -203,27 +203,27 @@ export default {
                     sub: [
                         {
                             title: "google-maps",
-                            name: "/maps/google-maps",
+                            path: "/maps/google-maps",
                             active: false,
                         },
                         {
                             title: "yandex-maps",
-                            name: "/maps/yandex-maps",
+                            path: "/maps/yandex-maps",
                             active: false,
                         },
                         {
                             title: "leaflet-maps",
-                            name: "/maps/leaflet-maps",
+                            path: "/maps/leaflet-maps",
                             active: false,
                         },
                         {
                             title: "bubble-maps",
-                            name: "/maps/bubble-maps",
+                            path: "/maps/bubble-maps",
                             active: false,
                         },
                         {
                             title: "line-maps",
-                            name: "/maps/line-maps",
+                            path: "/maps/line-maps",
                             active: false,
                         },
                     ],
@@ -235,17 +235,17 @@ export default {
                     sub: [
                         {
                             title: "login-signup",
-                            name: "login-signup",
+                            path: "/pages/login-signup",
                             active: false,
                         },
                         {
                             title: "404-pages",
-                            name: "404-pages",
+                            path: "/pages/404-pages",
                             active: false,
                         },
                         {
                             title: "faq",
-                            name: "faq",
+                            path: "/pages/faq",
                             active: false,
                         },
                     ],
@@ -269,8 +269,4 @@ export default {
 .sidebar-menu {
     padding: 2rem 0;
 }
-
-/* .va-collapse__header__content:hover {
-    background-color: attr(data-hover-color) !important;
-} */
 </style>

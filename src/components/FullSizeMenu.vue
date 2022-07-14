@@ -6,7 +6,7 @@
             :icon="item.icon"
         >
             <template #header>
-                <va-sidebar-item :active="isRouteActive(item)" :to="item.name">
+                <va-sidebar-item :active="isRouteActive(item)" :to="item.path">
                     <va-sidebar-item-content>
                         <div class="sidebar-item-icon">
                             <va-icon :name="item.icon" />
@@ -30,7 +30,7 @@
                     v-for="sub of item.sub"
                     :active="isRouteActive(sub)"
                     :key="sub"
-                    :to="sub.name"
+                    :to="sub.path"
                 >
                     <va-sidebar-item-content>
                         <div class="sidebar-item-icon"></div>

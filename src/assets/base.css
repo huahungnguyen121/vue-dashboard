@@ -3,6 +3,9 @@
     --header-height: 4rem;
     --box-shadow: 0 0.25rem 0.5rem 0 rgba(59, 63, 73, 0.15);
     --background-color: #f6f7f6;
+
+    /* override css variables */
+    --va-select-dropdown-background: var(--background-color) !important;
 }
 
 *,

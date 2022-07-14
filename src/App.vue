@@ -33,8 +33,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import "@/assets/base.css";
+@import "@/assets/icon-fonts/index.scss";
 
 #app {
     font-weight: normal;
@@ -59,5 +60,14 @@ export default {
 
 .row-equal .flex .va-card {
     height: 100%;
+}
+
+.va-toast__group {
+    flex-grow: 1 !important;
+    --va-toast-close-icon-right: 0px;
+}
+
+.va-select {
+    cursor: pointer !important;
 }
 </style>

@@ -7,7 +7,7 @@
                         isRouteActive(item) ||
                         (item.sub && item.sub.some((sub) => isRouteActive(sub)))
                     "
-                    :to="item.name"
+                    :to="item.path"
                 >
                     <va-sidebar-item-content>
                         <div>
@@ -25,7 +25,7 @@
                 <va-sidebar-item
                     v-for="sub in item.sub"
                     :active="isRouteActive(sub)"
-                    :to="sub.name"
+                    :to="sub.path"
                     :key="sub"
                 >
                     <va-sidebar-item-content>
