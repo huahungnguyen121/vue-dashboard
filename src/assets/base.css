@@ -31,3 +31,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
 }
+
+a,
+a:visited {
+    color: var(--va-primary);
+}

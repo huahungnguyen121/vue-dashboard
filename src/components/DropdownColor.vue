@@ -24,7 +24,7 @@
 
 <script>
 import { useColors, useGlobalConfig } from "vuestic-ui";
-import { getTheme, THEME_NAMES } from "../themes/themes";
+import { getTheme, THEME_NAMES, getThemeName } from "../themes/themes";
 import DropdownVue from "./Dropdown.vue";
 
 export default {
@@ -32,6 +32,12 @@ export default {
         const { mergeGlobalConfig } = useGlobalConfig();
         const { getColors } = useColors();
         const colors = getColors();
+        let themeName = "light"; // default theme
+        try {
+            themeName = getThemeName(colors);
+        } catch (err) {
+            throw Error(err); // use default theme instead
+        }
         const colorNames = Object.keys(colors).filter(
             (name) => name !== "focus"
         );
@@ -39,6 +45,7 @@ export default {
         return {
             colorNames,
             mergeGlobalConfig,
+            themeName,
         };
     },
     components: {
@@ -46,7 +53,7 @@ export default {
     },
     data() {
         return {
-            value: "light",
+            value: this.themeName,
             options: [
                 {
                     label: "Light",
@@ -67,7 +74,6 @@ export default {
         value(value) {
             try {
                 const toTheme = getTheme(value);
-                console.log(toTheme);
                 this.mergeGlobalConfig({
                     colors: toTheme.colors,
                     components: toTheme.components,

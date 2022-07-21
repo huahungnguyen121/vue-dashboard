@@ -1,21 +1,9 @@
 <script setup>
 import { RouterView } from "vue-router";
-import DashboardHeader from "./components/Header.vue";
-import Sidebar from "./components/Sidebar.vue";
 </script>
 
 <template>
-    <!-- Dashboard header -->
-    <DashboardHeader @minimized="toggleSidebar" />
-
-    <!-- Page content -->
-    <div class="main-body">
-        <Sidebar :minimized="minimized" />
-
-        <div class="content">
-            <RouterView />
-        </div>
-    </div>
+    <RouterView />
 </template>
 
 <script>
@@ -40,22 +28,12 @@ export default {
 #app {
     font-weight: normal;
     color: #2c3e50;
+    font-family: Source Sans Pro, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .app-layout {
     display: flex;
     flex-direction: column;
-}
-
-.main-body {
-    display: flex;
-    height: calc(100vh - var(--header-height));
-}
-
-.content {
-    flex-grow: 1;
-    overflow-y: auto;
-    background-color: var(--background-color);
 }
 
 .row-equal .flex .va-card {

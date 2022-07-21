@@ -1,58 +1,19 @@
 <template>
-    <div class="custom-dropdown" @click="toggleDropdown">
-        <div ref="toggle">
-            <slot name="label"></slot>
-        </div>
+    <va-dropdown :close-on-content-click="false">
+        <template #anchor>
+            <div class="custom-dropdown">
+                <slot name="label"></slot>
+            </div>
+        </template>
 
-        <div
-            v-if="isOpen"
-            class="custom-dropdown-content"
-            ref="content"
-            @click="(e) => e.stopPropagation()"
-        >
+        <div class="custom-dropdown-content">
             <slot></slot>
         </div>
-    </div>
+    </va-dropdown>
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            isOpen: false,
-        };
-    },
-    methods: {
-        toggleDropdown(e) {
-            e.stopPropagation();
-
-            this.isOpen = !this.isOpen;
-        },
-        closeDropdown() {
-            if (this.isOpen) this.isOpen = false;
-        },
-    },
-    mounted() {
-        this.outsideClick = window.addEventListener(
-            "click",
-            this.closeDropdown
-        );
-    },
-    beforeUnmount() {
-        window.removeEventListener("click", this.closeDropdown);
-    },
-    updated() {
-        if (this.isOpen) {
-            // check if dropdown is going off screen
-            if (
-                window.innerWidth -
-                    this.$refs.content.getBoundingClientRect().right <
-                0
-            )
-                this.$refs.content.classList.add("right-most");
-        }
-    },
-};
+export default {};
 </script>
 
 <style>
@@ -78,7 +39,6 @@ export default {
     flex-direction: column;
     align-items: center;
     z-index: 1000;
-    /* max-height: 350px; */
     overflow: auto;
     border-radius: 0.5rem;
     width: max-content;

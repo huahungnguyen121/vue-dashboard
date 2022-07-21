@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import { RouterLink } from "vue-router";
 import DropdownLang from "./DropdownLang.vue";
 import DashboardLogo from "./icons/DashboardLogo.vue";
 import MenuCollapse from "./icons/MenuCollapse.vue";

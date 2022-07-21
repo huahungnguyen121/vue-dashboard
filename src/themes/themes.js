@@ -1,45 +1,3 @@
-// export default {
-//     LIGHT: {
-//         primary: "rgb(21, 78, 193)",
-//         secondary: "rgb(118, 124, 136)",
-//         success: "rgb(61, 146, 9)",
-//         info: "rgb(44, 130, 224)",
-//         danger: "rgb(228, 34, 34)",
-//         warning: "rgb(255, 212, 58)",
-//         background: "rgb(246, 247, 246)",
-//         divider: "rgb(225, 233, 248)",
-//         gray: "rgb(118, 124, 136)",
-//         dark: "rgb(38, 40, 36)",
-//         white: "rgb(255, 255, 255)",
-//     },
-//     SEMI_DARK: {
-//         primary: "rgb(111, 146, 218)",
-//         secondary: "rgb(168, 174, 186)",
-//         success: "rgb(61, 146, 9)",
-//         info: "rgb(44, 130, 224)",
-//         danger: "rgb(228, 34, 34)",
-//         warning: "rgb(255, 212, 58)",
-//         background: "rgb(246, 247, 246)",
-//         divider: "rgb(225, 233, 248)",
-//         gray: "rgb(118, 124, 136)",
-//         dark: "rgb(38, 40, 36)",
-//         white: "rgb(255, 255, 255)",
-//     },
-//     ORIGINAL: {
-//         primary: "rgb(110, 220, 125)",
-//         secondary: "rgb(168, 174, 186)",
-//         success: "rgb(118, 225, 141)",
-//         info: "rgb(44, 130, 224)",
-//         danger: "rgb(227, 75, 74)",
-//         warning: "rgb(255, 194, 0)",
-//         background: "rgb(238, 238, 238)",
-//         divider: "rgb(225, 233, 248)",
-//         gray: "rgb(118, 124, 136)",
-//         dark: "rgb(38, 40, 36)",
-//         white: "rgb(255, 255, 255)",
-//     },
-// };
-
 export const THEME_NAMES = {
     LIGHT: "light",
     DARK: "dark",
@@ -192,4 +150,24 @@ export const getTheme = (themeName) => {
     if (!theme) throw Error("Cannot find theme");
 
     return theme;
+};
+
+export const getThemeName = (colors) => {
+    let matched = true;
+    for (let theme of THEMES) {
+        matched = true;
+        for (let colorName in colors) {
+            if (
+                theme.colors[colorName] &&
+                theme.colors[colorName] !== colors[colorName]
+            ) {
+                matched = false;
+                break;
+            }
+        }
+
+        if (matched) return theme.name;
+    }
+
+    throw Error("Cannot find theme name");
 };

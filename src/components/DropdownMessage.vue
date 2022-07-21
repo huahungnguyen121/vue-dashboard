@@ -86,6 +86,10 @@ export default {
     color: var(--va-primary) !important;
 }
 
+.message-list {
+    cursor: pointer;
+}
+
 .message-item-image {
     margin-right: 0.5rem;
 }

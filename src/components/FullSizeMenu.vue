@@ -28,7 +28,7 @@
             <template v-if="item.sub" #default>
                 <va-sidebar-item
                     v-for="sub of item.sub"
-                    :active="isRouteActive(sub)"
+                    :active="isRouteActive(sub, item)"
                     :key="sub"
                     :to="sub.path"
                 >
@@ -52,9 +52,23 @@ export default {
             default: [],
         },
     },
+    data() {
+        return {
+            autoExpand: false,
+        };
+    },
     methods: {
-        isRouteActive(item) {
-            return item.title === this.$route.name; // must match route name in router
+        isRouteActive(item, expandMenu) {
+            if (item.title === this.$route.name) {
+                // sidebar item's title must match route name in router
+                if (expandMenu && !this.autoExpand) {
+                    expandMenu.collapse = true; // automatically expand sub menu
+                    this.autoExpand = true; // make sure automatically expand happens only once
+                }
+
+                return true;
+            }
+            return false;
         },
     },
 };
