@@ -13,6 +13,7 @@
                         <div>
                             <va-icon
                                 :class="`vuestic-iconset vuestic-iconset-${item.icon}`"
+                                style="font-size: 19px"
                             />
                             <va-icon
                                 v-if="item.sub"

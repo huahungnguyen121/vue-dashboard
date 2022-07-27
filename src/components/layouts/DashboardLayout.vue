@@ -1,6 +1,10 @@
 <template>
     <!-- Dashboard header -->
-    <DashboardHeader @minimized="toggleSidebar" :username="username" />
+    <DashboardHeader
+        :minimized="minimized"
+        @minimized="toggleSidebar"
+        :username="username"
+    />
 
     <!-- Page content -->
     <div class="main-body">

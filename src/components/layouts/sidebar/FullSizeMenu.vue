@@ -15,6 +15,7 @@
                         <div class="sidebar-item-icon">
                             <va-icon
                                 :class="`vuestic-iconset vuestic-iconset-${item.icon}`"
+                                style="font-size: 19px"
                             />
                         </div>
                         <va-sidebar-item-title style="height: 24px">

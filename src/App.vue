@@ -30,6 +30,7 @@ export default {
     font-weight: normal;
     color: #2c3e50;
     font-family: Source Sans Pro, Avenir, Helvetica, Arial, sans-serif;
+    height: 100vh;
 }
 
 .app-layout {

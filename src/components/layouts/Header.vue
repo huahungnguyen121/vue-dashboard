@@ -3,7 +3,7 @@
         <template #left>
             <div class="header-logo">
                 <MenuCollapse
-                    :class="{ flip: sidebarOpen }"
+                    :class="{ flip: minimized }"
                     :color="colors.primary"
                     @click="emitEvent"
                 />
@@ -58,6 +58,9 @@ export default {
             type: String,
             default: "Unknown",
         },
+        minimized: {
+            type: Boolean,
+        },
     },
     setup() {
         const { getColors, setColors } = useColors();
@@ -79,7 +82,6 @@ export default {
     },
     data() {
         return {
-            sidebarOpen: false,
             theme: THEME_NAMES.LIGHT,
         };
     },
