@@ -50,8 +50,6 @@ export default {
 .sidebar {
     width: var(--sidebar-width);
     height: 100%;
-    overflow-y: auto;
-    overflow-anchor: none;
     flex-shrink: 0;
 }
 
@@ -63,5 +61,7 @@ export default {
 
 .sidebar-menu {
     padding: 2rem 0;
+    overflow-y: auto;
+    overflow-anchor: none;
 }
 </style>
