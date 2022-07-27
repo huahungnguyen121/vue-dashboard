@@ -15,7 +15,7 @@
             <div class="header-center"></div>
         </template>
 
-        <template #right>
+        <template #right style="position: static">
             <div class="header-control">
                 <DropdownColor />
                 <DropdownMessageVue />
@@ -92,7 +92,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "../../assets/sass/useful/mixins";
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -101,17 +103,51 @@ export default {
     padding: 0 2rem 0 1rem;
     align-items: center;
     z-index: 100;
+
+    @include respond-to("small") {
+        padding: 1.1875rem 1rem 0rem;
+        height: 6.5rem;
+        align-items: stretch;
+    }
 }
 
 .header-logo {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+    @include respond-to("small") {
+        flex-grow: 1;
+    }
 }
 
 .header-control {
     display: flex;
     align-items: center;
+    position: static;
+
+    @include respond-to("small") {
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}
+
+.va-navbar__right {
+    position: static;
+}
+
+.custom-dropdown-btn {
+    @include respond-to("small") {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.custom-dropdown-btn button {
+    @include respond-to("small") {
+        min-height: auto;
+    }
 }
 
 .profile-dropdown {

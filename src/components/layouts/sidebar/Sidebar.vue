@@ -1,5 +1,10 @@
 <template>
-    <va-sidebar class="sidebar" :minimized="minimized" minimizedWidth="auto">
+    <va-sidebar
+        class="sidebar"
+        :class="{ 'sidebar--expanded': !minimized }"
+        :minimized="minimized"
+        minimizedWidth="auto"
+    >
         <div class="sidebar-menu">
             <CompactMenuVue v-if="minimized" :items="items" />
             <FullSizeMenuVue v-else :items="items" />
@@ -39,13 +44,21 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "../../../assets/sass/useful/mixins";
+
 .sidebar {
     width: var(--sidebar-width);
     height: 100%;
     overflow-y: auto;
     overflow-anchor: none;
     flex-shrink: 0;
+}
+
+.sidebar.sidebar--expanded {
+    @include respond-to("small") {
+        width: 100vw !important;
+    }
 }
 
 .sidebar-menu {

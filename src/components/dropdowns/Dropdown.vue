@@ -30,24 +30,8 @@ export default {};
 }
 
 .custom-dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: var(--background-color);
     box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1000;
-    overflow: auto;
     border-radius: 0.5rem;
-    width: max-content;
-}
-
-.custom-dropdown-content.right-most {
-    right: 0;
-    left: auto;
-    transform: translateX(0);
 }
 </style>
