@@ -8,9 +8,11 @@
                     </va-card-title>
                     <va-card-content>
                         <va-file-upload
+                            :upload-button-text="$t('fileUpload.uploadFile')"
                             v-model="specificTypes"
                             type="gallery"
                             dropzone
+                            :drop-zone-text="$t('fileUpload.dragNdropFiles')"
                             file-types=".png, .jpg, .jpeg, .gif"
                         />
                     </va-card-content>
@@ -22,7 +24,12 @@
                         {{ $t("fileUpload.advancedUploadList") }}
                     </va-card-title>
                     <va-card-content>
-                        <va-file-upload v-model="uploadList" dropzone />
+                        <va-file-upload
+                            :upload-button-text="$t('fileUpload.uploadFile')"
+                            v-model="uploadList"
+                            dropzone
+                            :drop-zone-text="$t('fileUpload.dragNdropFiles')"
+                        />
                     </va-card-content>
                 </va-card>
             </div>
@@ -32,7 +39,11 @@
                         {{ $t("fileUpload.single") }}
                     </va-card-title>
                     <va-card-content>
-                        <va-file-upload v-model="single" type="single" />
+                        <va-file-upload
+                            :upload-button-text="$t('fileUpload.uploadFile')"
+                            v-model="single"
+                            type="single"
+                        />
                     </va-card-content>
                 </va-card>
             </div>
@@ -43,6 +54,7 @@
                     </va-card-title>
                     <va-card-content>
                         <va-file-upload
+                            :upload-button-text="$t('fileUpload.uploadFile')"
                             v-model="singleGallery"
                             type="gallery"
                             file-types=".png, .jpg, .jpeg, .gif"
@@ -56,7 +68,10 @@
                         {{ $t("fileUpload.uploadList") }}
                     </va-card-title>
                     <va-card-content>
-                        <va-file-upload v-model="list" />
+                        <va-file-upload
+                            :upload-button-text="$t('fileUpload.uploadFile')"
+                            v-model="list"
+                        />
                     </va-card-content>
                 </va-card>
             </div>

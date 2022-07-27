@@ -29,19 +29,19 @@
                 <va-card-title>
                     {{ $t("dashboard.currentVisitors") }}
                 </va-card-title>
-                <va-card-content>
-                    <LineMap :map-data="lineMapData" style="height: 400px" />
-                </va-card-content>
+                <LineMap :map-data="lineMapData" style="height: 400px" />
             </va-card>
         </template>
     </DashboardRow2Vue>
 </template>
 <script>
+import { useGlobalConfig } from "vuestic-ui";
 import DashboardRow2Vue from "./DashboardRow2.vue";
-import LineMap from "../../components/LineMap.vue";
+import LineMap from "../../components/maps/LineMap.vue";
 import OverviewTab from "./tabs/OverviewTab.vue";
 import BillingAddressTab from "./tabs/BillingAddressTab.vue";
 import BankDetailsTab from "./tabs/BankDetailsTab.vue";
+import { getLineMapData } from "../../data/lineMapData";
 
 export default {
     components: {
@@ -54,8 +54,12 @@ export default {
     data() {
         return {
             activeTabName: "OverviewTab",
-            lineMapData: { cities: [], mainCity: "" },
         };
+    },
+    computed: {
+        lineMapData() {
+            return getLineMapData(useGlobalConfig().getGlobalConfig().colors);
+        },
     },
 };
 </script>

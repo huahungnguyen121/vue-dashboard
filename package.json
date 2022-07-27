@@ -11,6 +11,7 @@
         "amcharts3": "^3.21.15",
         "ammap3": "^3.21.15",
         "epic-spinners": "^1.1.0",
+        "flag-icons": "^6.6.4",
         "font-awesome": "^4.7.0",
         "google-maps": "^4.3.3",
         "i18next": "^21.8.10",

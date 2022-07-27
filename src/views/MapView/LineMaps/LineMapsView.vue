@@ -10,7 +10,7 @@
     </div>
 </template>
 <script>
-import LineMapVue from "../../../components/LineMap.vue";
+import LineMapVue from "../../../components/maps/LineMap.vue";
 import { getLineMapData } from "../../../data/lineMapData";
 import { useGlobalConfig } from "vuestic-ui";
 

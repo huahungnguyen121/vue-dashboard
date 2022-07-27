@@ -1,6 +1,6 @@
 <template>
     <!-- Dashboard header -->
-    <DashboardHeader @minimized="toggleSidebar" />
+    <DashboardHeader @minimized="toggleSidebar" :username="username" />
 
     <!-- Page content -->
     <div class="main-body">
@@ -12,8 +12,8 @@
     </div>
 </template>
 <script>
-import DashboardHeader from "../Header.vue";
-import Sidebar from "../Sidebar.vue";
+import DashboardHeader from "./Header.vue";
+import Sidebar from "./sidebar/Sidebar.vue";
 import { RouterView } from "vue-router";
 
 export default {
@@ -25,6 +25,7 @@ export default {
     data() {
         return {
             minimized: false,
+            username: "Vasili S",
         };
     },
     methods: {

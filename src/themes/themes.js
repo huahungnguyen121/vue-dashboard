@@ -38,6 +38,9 @@ export const THEMES = [
             VaCardTitle: {
                 textColor: "dark",
             },
+            VaButtonDropdown: {
+                color: "dark",
+            },
         },
     },
     {
@@ -71,6 +74,9 @@ export const THEMES = [
             },
             VaCardTitle: {
                 textColor: "dark",
+            },
+            VaButtonDropdown: {
+                color: "primary",
             },
         },
     },
@@ -106,6 +112,9 @@ export const THEMES = [
             VaCardTitle: {
                 textColor: "dark",
             },
+            VaButtonDropdown: {
+                color: "white",
+            },
         },
     },
     {
@@ -139,6 +148,9 @@ export const THEMES = [
             },
             VaCardTitle: {
                 textColor: "dark",
+            },
+            VaButtonDropdown: {
+                color: "primary",
             },
         },
     },

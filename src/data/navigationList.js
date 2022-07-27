@@ -7,7 +7,7 @@ export default [
     },
     {
         title: "statistics",
-        icon: "signal_cellular_alt",
+        icon: "statistics",
         sub: [
             {
                 title: "charts",
@@ -24,7 +24,7 @@ export default [
     },
     {
         title: "forms",
-        icon: "description",
+        icon: "forms",
         sub: [
             {
                 title: "formElements",
@@ -41,7 +41,7 @@ export default [
     },
     {
         title: "tables",
-        icon: "table_chart",
+        icon: "tables",
         sub: [
             {
                 title: "markupTables",
@@ -53,7 +53,7 @@ export default [
     },
     {
         title: "uiElements",
-        icon: "widgets",
+        icon: "ui-elements",
         sub: [
             {
                 title: "buttons",
@@ -165,7 +165,7 @@ export default [
     },
     {
         title: "maps",
-        icon: "near_me",
+        icon: "maps",
         sub: [
             {
                 title: "google-maps",
@@ -197,7 +197,7 @@ export default [
     },
     {
         title: "pages",
-        icon: "article",
+        icon: "files",
         sub: [
             {
                 title: "login-signup",

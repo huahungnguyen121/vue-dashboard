@@ -44,7 +44,7 @@ export default {
     computed: {
         tabIndex: {
             set(tabName) {
-                this.$router.push({ name: tabName });
+                this.$router.replace({ name: tabName });
             },
             get() {
                 return this.$route.name;

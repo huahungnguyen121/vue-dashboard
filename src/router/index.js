@@ -26,6 +26,7 @@ const router = createRouter({
                 ...mapsRoutes,
                 ...pagesRoutes,
             ],
+            alias: "/",
         },
         {
             path: "/auth",

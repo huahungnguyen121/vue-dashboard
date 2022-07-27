@@ -20,13 +20,13 @@
                 <va-card-title>
                     <div class="card-header">
                         {{ $t("dashboard.charts.loadingSpeed") }}
-                        <va-button color="primary" flat round
-                            ><va-icon name="print"
-                        /></va-button>
+                        <va-button color="primary" flat round>
+                            <va-icon name="print" @click="printCard" />
+                        </va-button>
                     </div>
                 </va-card-title>
                 <va-card-content>
-                    <DonutChartVue />
+                    <DonutChartVue class="dashboard-charts__donut-chart" />
                 </va-card-content>
             </va-card>
         </template>
@@ -97,6 +97,28 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+        printCard() {
+            const win = window.open("", "Print", "height=600,width=800");
+            win?.document.write(
+                `<br/><div style="display: flex; justify-content: center"><img src="${this.donutChartDataURL}"/></div>`
+            );
+
+            setTimeout(() => {
+                win?.document.close();
+                win?.focus();
+                win?.print();
+                win?.close();
+            }, 200);
+        },
+    },
+    computed: {
+        donutChartDataURL() {
+            return document
+                .querySelector(".dashboard-charts__donut-chart > canvas")
+                .toDataURL("image/png");
+        },
     },
 };
 </script>

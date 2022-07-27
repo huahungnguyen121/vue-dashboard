@@ -24,6 +24,7 @@ export default {
 <style lang="scss">
 @import "@/assets/base.css";
 @import "@/assets/icon-fonts/index.scss";
+@import "@/assets/flag-icons/sass/flag-icons.scss";
 
 #app {
     font-weight: normal;
