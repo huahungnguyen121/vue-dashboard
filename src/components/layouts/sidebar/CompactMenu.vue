@@ -31,7 +31,7 @@
                     :key="sub"
                 >
                     <va-sidebar-item-content>
-                        <va-sidebar-item-title>
+                        <va-sidebar-item-title style="color: var(--va-gray)">
                             {{ $t(`menu.${sub.title}`) }}
                         </va-sidebar-item-title>
                     </va-sidebar-item-content>

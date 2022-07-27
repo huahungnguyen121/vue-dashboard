@@ -15,6 +15,7 @@
 import DashboardHeader from "./Header.vue";
 import Sidebar from "./sidebar/Sidebar.vue";
 import { RouterView } from "vue-router";
+import UtilConstants from "../../constants/util-constants";
 
 export default {
     components: {
@@ -24,13 +25,21 @@ export default {
     },
     data() {
         return {
-            minimized: false,
+            minimized: this.checkIsSmallScreen(),
             username: "Vasili S",
         };
+    },
+    beforeRouteUpdate() {
+        if (this.checkIsSmallScreen() && !this.minimized) this.minimized = true;
     },
     methods: {
         toggleSidebar(state) {
             this.minimized = state;
+        },
+        checkIsSmallScreen() {
+            return (
+                window.innerWidth < UtilConstants.SCREEN_WIDTH_BREAKPOINTS.small
+            );
         },
     },
 };
