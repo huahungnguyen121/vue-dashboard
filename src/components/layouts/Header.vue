@@ -7,7 +7,9 @@
                     :color="colors.primary"
                     @click="emitEvent"
                 />
-                <DashboardLogo />
+                <RouterLink to="/">
+                    <DashboardLogo />
+                </RouterLink>
             </div>
         </template>
 
