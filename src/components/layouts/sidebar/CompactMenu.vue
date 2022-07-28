@@ -32,7 +32,9 @@
                     :key="sub"
                 >
                     <va-sidebar-item-content>
-                        <va-sidebar-item-title style="color: var(--va-gray)">
+                        <va-sidebar-item-title
+                            :style="calcSidebarItemStyle(isRouteActive(sub))"
+                        >
                             {{ $t(`menu.${sub.title}`) }}
                         </va-sidebar-item-title>
                     </va-sidebar-item-content>
@@ -43,6 +45,9 @@
 </template>
 
 <script>
+import { getThemeName, THEME_NAMES } from "../../../themes/themes";
+import { useColors, useGlobalConfig } from "vuestic-ui";
+
 export default {
     props: {
         items: {
@@ -53,6 +58,22 @@ export default {
     methods: {
         isRouteActive(item) {
             return item.title === this.$route.name; // must match route name in router
+        },
+        calcSidebarItemStyle(isActive) {
+            const colors = useGlobalConfig().getGlobalConfig().colors;
+
+            if (!isActive) return { color: colors.gray };
+
+            try {
+                const themeName = getThemeName(colors);
+                if (themeName && themeName === THEME_NAMES.LIGHT) {
+                    return { color: colors.white };
+                }
+            } catch (err) {
+                console.log(err);
+            }
+
+            return { color: colors.dark };
         },
     },
 };
