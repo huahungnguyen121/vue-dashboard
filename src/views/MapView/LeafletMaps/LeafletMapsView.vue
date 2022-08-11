@@ -15,7 +15,7 @@ import Leaflet from "leaflet";
 export default {
     mounted() {
         Leaflet.Icon.Default.imagePath = import.meta.env.BASE_URL;
-        const map = Leaflet.map("map").setView([51.505, -0.09], 13);
+        const map = Leaflet.map("map").setView([10.762622, 106.660172], 15);
 
         Leaflet.tileLayer("https://tile.osm.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
@@ -23,10 +23,22 @@ export default {
                 '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(map);
 
-        Leaflet.marker([51.5, -0.09])
-            .addTo(map)
-            .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-            .openPopup();
+        let marker;
+
+        map.on("click", (e) => {
+            if (e.latlng) {
+                if (!marker) {
+                    marker = Leaflet.marker([e.latlng.lat, e.latlng.lng])
+                        .addTo(map)
+                        .bindPopup(
+                            "A pretty CSS3 popup.<br> Easily customizable."
+                        )
+                        .openPopup();
+                    return;
+                }
+                marker.setLatLng([e.latlng.lat, e.latlng.lng]).update();
+            }
+        });
     },
 };
 </script>

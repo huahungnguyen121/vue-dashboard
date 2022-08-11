@@ -7,7 +7,8 @@
     },
     "dropdown-profile": {
         "profile": "My Profile",
-        "logout": "Logout"
+        "logout": "Logout",
+        "login": "Login"
     },
     "auth": {
         "agree": "I agree to",

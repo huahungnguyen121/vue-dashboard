@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import mitt from "mitt";
 import App from "./App.vue";
 import router from "./router";
 import { createVuestic } from "vuestic-ui";
@@ -18,5 +19,7 @@ app.use(
         },
     })
 );
+
+app.config.globalProperties.$emitter = mitt();
 
 app.mount("#app");

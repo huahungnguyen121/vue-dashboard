@@ -10,6 +10,7 @@
     "dependencies": {
         "amcharts3": "^3.21.15",
         "ammap3": "^3.21.15",
+        "axios": "^0.27.2",
         "epic-spinners": "^1.1.0",
         "flag-icons": "^6.6.4",
         "font-awesome": "^4.7.0",
@@ -19,6 +20,7 @@
         "ionicons": "^4.0.0",
         "leaflet": "^1.8.0",
         "medium-editor": "^5.23.3",
+        "mitt": "^3.0.0",
         "vue": "^3.2.36",
         "vue-chartjs": "^4.1.1",
         "vue-router": "^4.0.15",

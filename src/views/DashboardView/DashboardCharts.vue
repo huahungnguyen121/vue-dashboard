@@ -5,9 +5,14 @@
                 <va-card-title>
                     <div class="card-header">
                         {{ $t("dashboard.charts.trendyTrends") }}
-                        <va-button color="danger" size="small">{{
-                            $t("dashboard.charts.showInMoreDetail")
-                        }}</va-button>
+                        <va-button
+                            @click="testAPI"
+                            color="danger"
+                            size="small"
+                            >{{
+                                $t("dashboard.charts.showInMoreDetail")
+                            }}</va-button
+                        >
                     </div>
                 </va-card-title>
                 <va-card-content>
@@ -59,6 +64,7 @@ import LineChartVue from "../../components/charts/LineChart.vue";
 import DonutChartVue from "../../components/charts/DonutChart.vue";
 import ContributorChartVue from "../../components/charts/ContributorChart.vue";
 import DashboardRow3 from "./DashboardRow3.vue";
+import httpService from "../../services/http-service.js";
 
 export default {
     components: {
@@ -111,6 +117,14 @@ export default {
                 win?.print();
                 win?.close();
             }, 200);
+        },
+        async testAPI() {
+            try {
+                const res = await httpService.get("/");
+                console.log(res);
+            } catch (err) {
+                console.log(err);
+            }
         },
     },
     computed: {

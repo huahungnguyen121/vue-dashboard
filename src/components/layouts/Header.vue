@@ -23,19 +23,27 @@
                 <DropdownMessageVue />
                 <DropdownNotificationVue />
                 <DropdownLang />
-                <va-button-dropdown class="custom-dropdown-btn" flat>
+                <va-button
+                    class="login-btn ml-1"
+                    flat
+                    v-if="username === 'Unknown'"
+                    :to="{ name: 'login-signup' }"
+                >
+                    {{ $t("dropdown-profile.login") }}
+                </va-button>
+                <va-button-dropdown v-else class="custom-dropdown-btn" flat>
                     <template #label>
-                        <span style="font-weight: normal">
+                        <span class="profile-displayed-name">
                             {{ username }}
                         </span>
                     </template>
                     <div class="profile-dropdown">
-                        <span class="profile-dropdown-item">{{
-                            $t("dropdown-profile.profile")
-                        }}</span>
-                        <span class="profile-dropdown-item">{{
-                            $t("dropdown-profile.logout")
-                        }}</span>
+                        <span class="profile-dropdown-item">
+                            {{ $t("dropdown-profile.profile") }}
+                        </span>
+                        <span class="profile-dropdown-item" @click="logout">
+                            {{ $t("dropdown-profile.logout") }}
+                        </span>
                     </div>
                 </va-button-dropdown>
             </div>
@@ -53,6 +61,8 @@ import { THEME_NAMES } from "../../themes/themes";
 import DropdownColor from "../dropdowns/DropdownColor.vue";
 import DropdownNotificationVue from "../dropdowns/DropdownNotification.vue";
 import DropdownMessageVue from "../dropdowns/DropdownMessage.vue";
+import httpService from "../../services/http-service.js";
+import { removeStorage } from "../../utils/local-storage.js";
 
 export default {
     props: {
@@ -92,6 +102,21 @@ export default {
         emitEvent() {
             this.sidebarOpen = !this.sidebarOpen;
             this.$emit("minimized", this.sidebarOpen);
+        },
+        async logout() {
+            try {
+                await httpService.delete("/auth/logout");
+            } catch (err) {
+                if (
+                    err.response.status !== 400 &&
+                    err.response.status !== 401
+                ) {
+                    alert("Something went wrong!");
+                    console.error(err);
+                }
+            }
+            removeStorage("user");
+            this.$router.go();
         },
     },
 };
@@ -141,6 +166,15 @@ export default {
     position: static;
 }
 
+.login-btn {
+    @include respond-to("small") {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-height: auto;
+    }
+}
+
 .custom-dropdown-btn {
     @include respond-to("small") {
         position: absolute;
@@ -181,5 +215,12 @@ export default {
 
 .flip {
     transform: scaleX(-100%);
+}
+
+.profile-displayed-name {
+    font-weight: normal;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 </style>

@@ -3,7 +3,7 @@
     <DashboardHeader
         :minimized="minimized"
         @minimized="toggleSidebar"
-        :username="username"
+        :username="username === null ? undefined : username"
     />
 
     <!-- Page content -->
@@ -20,6 +20,7 @@ import DashboardHeader from "./Header.vue";
 import Sidebar from "./sidebar/Sidebar.vue";
 import { RouterView } from "vue-router";
 import UtilConstants from "../../constants/util-constants";
+import { getStorage } from "../../utils/local-storage.js";
 
 export default {
     components: {
@@ -30,7 +31,7 @@ export default {
     data() {
         return {
             minimized: this.checkIsSmallScreen(),
-            username: "Vasili S",
+            username: null,
         };
     },
     beforeRouteUpdate() {
@@ -45,6 +46,18 @@ export default {
                 window.innerWidth < UtilConstants.SCREEN_WIDTH_BREAKPOINTS.small
             );
         },
+    },
+    mounted() {
+        this.$emitter.on("loggedin", (isLoggedIn) => {
+            if (isLoggedIn) {
+                this.username = getStorage("user")?.username;
+            }
+        });
+
+        const usernameInStorage = getStorage("user")?.username;
+        if (usernameInStorage !== undefined) {
+            this.username = usernameInStorage;
+        }
     },
 };
 </script>

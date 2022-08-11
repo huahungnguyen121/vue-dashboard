@@ -37,6 +37,9 @@
     </form>
 </template>
 <script>
+import httpService from "../../../services/http-service.js";
+import { setStorage } from "../../../utils/local-storage.js";
+
 export default {
     data() {
         return {
@@ -53,13 +56,33 @@ export default {
         },
     },
     methods: {
-        onsubmit() {
+        async onsubmit() {
             this.emailErrors = this.email ? [] : ["Email is required"];
             this.passwordErrors = this.password ? [] : ["Password is required"];
             if (!this.formReady) {
                 return;
             }
-            this.$router.push({ name: "dashboard" });
+
+            try {
+                const res = await httpService.post("/auth/login", {
+                    username: this.email,
+                    password: this.password,
+                });
+
+                if (res.status === 200) {
+                    setStorage("user", { username: this.email });
+                    this.$router.push({ name: "dashboard" }).then(() => {
+                        this.$emitter.emit("loggedin", true);
+                    });
+                }
+            } catch (err) {
+                if (err.response.status === 400) {
+                    alert(err.response.data.message);
+                } else {
+                    alert("Something went wrong!");
+                    console.error(err);
+                }
+            }
         },
     },
 };
