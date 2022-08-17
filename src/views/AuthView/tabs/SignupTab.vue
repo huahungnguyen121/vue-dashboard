@@ -45,6 +45,8 @@
     </form>
 </template>
 <script>
+import httpService from "../../../services/http-service.js";
+
 export default {
     data() {
         return {
@@ -57,7 +59,15 @@ export default {
         };
     },
     methods: {
-        onsubmit() {
+        resetForm() {
+            this.email = "";
+            this.password = "";
+            this.agreedToTerms = false;
+            this.emailErrors = [];
+            this.passwordErrors = [];
+            this.agreedToTermsErrors = [];
+        },
+        async onsubmit() {
             this.emailErrors = this.email ? [] : ["Email is required"];
             this.passwordErrors = this.password ? [] : ["Password is required"];
             this.agreedToTermsErrors = this.agreedToTerms
@@ -66,7 +76,24 @@ export default {
             if (!this.formReady) {
                 return;
             }
-            this.$router.push({ name: "dashboard" });
+            try {
+                const res = await httpService.post("/auth/register", {
+                    username: this.email,
+                    password: this.password,
+                });
+
+                if (res.status === 201) {
+                    this.resetForm();
+                    alert(res.data.message);
+                }
+            } catch (err) {
+                if (err.response.status === 400) {
+                    alert(err.response.data.message);
+                } else {
+                    alert("Something went wrong!");
+                    console.error(err);
+                }
+            }
         },
     },
     computed: {
