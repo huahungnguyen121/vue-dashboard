@@ -55,10 +55,7 @@ export default {
     methods: {
         setMarker(lat, long) {
             if (!this.marker) {
-                this.marker = Leaflet.marker([lat, long])
-                    .addTo(this.map)
-                    .openPopup();
-                return;
+                this.marker = Leaflet.marker([lat, long]).addTo(this.map);
             }
             this.marker.setLatLng([lat, long]).update();
             this.map.setView([lat, long], 17);
