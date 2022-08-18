@@ -19,6 +19,7 @@
         "i18next-vue": "^2.0.0-beta.0",
         "ionicons": "^4.0.0",
         "leaflet": "^1.8.0",
+        "leaflet-control-geocoder": "^2.4.0",
         "medium-editor": "^5.23.3",
         "mitt": "^3.0.0",
         "vue": "^3.2.36",
