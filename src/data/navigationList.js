@@ -214,6 +214,11 @@ export default [
                 path: "/dashboard/pages/faq",
                 active: false,
             },
+            {
+                title: "user-list",
+                path: "/dashboard/pages/user-list",
+                active: false,
+            },
         ],
         collapse: false,
     },

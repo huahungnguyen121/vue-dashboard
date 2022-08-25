@@ -337,7 +337,8 @@
         "line-maps": "Line Maps",
         "login-signup": "Login/Signup",
         "404-pages": "404 Pages",
-        "faq": "Faq"
+        "faq": "Faq",
+        "user-list": "User List"
     },
     "messages": {
         "all": "See all messages",

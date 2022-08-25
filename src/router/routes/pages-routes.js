@@ -9,4 +9,9 @@ export default [
         name: "faq",
         component: () => import("../../views/FaqView/FaqView.vue"),
     },
+    {
+        path: "pages/user-list",
+        name: "user-list",
+        component: () => import("../../views/UserView/UserView.vue"),
+    },
 ];

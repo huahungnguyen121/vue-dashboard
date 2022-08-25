@@ -337,7 +337,8 @@
         "line-maps": "Bản đồ Line",
         "login-signup": "Đăng nhập/Đăng ký",
         "404-pages": "Trang 404",
-        "faq": "Faq"
+        "faq": "Faq",
+        "user-list": "Danh sách người dùng"
     },
     "messages": {
         "all": "Xem tất cả",

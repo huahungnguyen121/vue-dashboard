@@ -125,6 +125,10 @@ export default {
 <style lang="scss">
 @import "../../assets/sass/useful/mixins";
 
+.va-navbar__content {
+    position: relative;
+}
+
 .header {
     display: flex;
     justify-content: space-between;

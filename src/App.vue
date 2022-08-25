@@ -42,11 +42,6 @@ export default {
     height: 100%;
 }
 
-.va-toast__group {
-    flex-grow: 1 !important;
-    --va-toast-close-icon-right: 0px;
-}
-
 .va-select {
     cursor: pointer !important;
 }

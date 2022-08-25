@@ -8,6 +8,7 @@
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
     },
     "dependencies": {
+        "@vuepic/vue-datepicker": "^3.4.6",
         "amcharts3": "^3.21.15",
         "ammap3": "^3.21.15",
         "axios": "^0.27.2",
@@ -20,8 +21,10 @@
         "ionicons": "^4.0.0",
         "leaflet": "^1.8.0",
         "leaflet-control-geocoder": "^2.4.0",
+        "lodash": "^4.17.21",
         "medium-editor": "^5.23.3",
         "mitt": "^3.0.0",
+        "moment": "^2.29.4",
         "vue": "^3.2.36",
         "vue-chartjs": "^4.1.1",
         "vue-router": "^4.0.15",

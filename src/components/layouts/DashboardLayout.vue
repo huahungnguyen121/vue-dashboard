@@ -51,6 +51,8 @@ export default {
         this.$emitter.on("loggedin", (isLoggedIn) => {
             if (isLoggedIn) {
                 this.username = getStorage("user")?.username;
+            } else {
+                this.username = null;
             }
         });
 
