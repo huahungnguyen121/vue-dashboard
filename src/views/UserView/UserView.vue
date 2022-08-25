@@ -76,6 +76,10 @@
                                                 icon="delete"
                                                 color="danger"
                                                 flat
+                                                :disabled="
+                                                    user.username ===
+                                                    usernameInStorage
+                                                "
                                                 @click="
                                                     showConfirmModel(() =>
                                                         handleSubmitDelete(user)
@@ -145,13 +149,16 @@ import moment from "moment";
 import Datepicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
 import httpService from "../../services/http-service.js";
+import { getStorage } from "../../utils/local-storage.js";
 
 export default {
     components: {
         Datepicker,
     },
     setup() {
-        return { moment };
+        const usernameInStorage = getStorage("user")?.username;
+
+        return { moment, usernameInStorage };
     },
     data() {
         return {
