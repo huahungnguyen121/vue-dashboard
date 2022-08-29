@@ -35,6 +35,9 @@ axiosInstance.interceptors.response.use(
                     emitter.emit("loggedin", false);
                 };
                 logout();
+                if (error.response.data.message === "Access token expired") {
+                    alert("Login session expired. Please login again.");
+                }
             }
         }
         return Promise.reject(error);
