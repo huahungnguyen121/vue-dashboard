@@ -67,6 +67,7 @@ export default {
                 const res = await httpService.post("/auth/login", {
                     username: this.email,
                     password: this.password,
+                    rememberMe: this.keepLoggedIn,
                 });
 
                 if (res.status === 200) {
