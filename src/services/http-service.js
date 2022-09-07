@@ -17,8 +17,8 @@ axiosInstance.interceptors.response.use(
         if (usernameInStorage !== undefined) {
             if (
                 (error.response.status === 401 &&
-                    error.response.data.message === "Access token expired") ||
-                error.response.data.message === "Invalid access token"
+                    error.response.data.message === "Token expired") ||
+                error.response.data.message === "Invalid token"
             ) {
                 const logout = async () => {
                     try {
@@ -35,7 +35,7 @@ axiosInstance.interceptors.response.use(
                     emitter.emit("loggedin", false);
                 };
                 logout();
-                if (error.response.data.message === "Access token expired") {
+                if (error.response.data.message === "Token expired") {
                     alert("Login session expired. Please login again.");
                 }
             }

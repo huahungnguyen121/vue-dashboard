@@ -217,6 +217,7 @@ export default {
                             ? "Please login before accessing data on this page"
                             : err.response.data.message
                     );
+                    this.users = [];
                 } else {
                     alert("Something went wrong!");
                     console.error(err);
