@@ -1,6 +1,6 @@
-# vue-dashboard
+# Vue Dashboard
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a clone of [vuestic-admin](https://github.com/epicmaxco/vuestic-admin) using Vue 3 with Vite.
 
 ## Recommended IDE Setup
 
