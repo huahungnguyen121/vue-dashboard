@@ -1,6 +1,8 @@
 # Vue Dashboard
 
-This project is a clone of [vuestic-admin](https://github.com/epicmaxco/vuestic-admin) using Vue 3 with Vite.
+This project is me cloning [vuestic-admin](https://github.com/epicmaxco/vuestic-admin) using [Vue 3 + Vite](https://vuejs.org/guide/quick-start.html).
+
+The project also comes with a small backend which you can find [here](https://github.com/huahungnguyen121/vue-dashboard-be).
 
 ## Recommended IDE Setup
 
